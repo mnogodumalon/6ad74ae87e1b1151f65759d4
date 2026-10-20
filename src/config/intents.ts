@@ -20,6 +20,7 @@
 import type { ComponentType } from 'react';
 
 // <custom:intent-imports>
+import { IconRocket, IconRobot, IconPlayerPlay, IconScale, IconGavel, IconChecklist } from '@tabler/icons-react';
 // </custom:intent-imports>
 
 export interface IntentLink {
@@ -42,6 +43,12 @@ export interface IntentLink {
 
 export const INTENTS: IntentLink[] = [
   // <custom:intents>
+  { path: '/intents/vorhaben-anlegen', label: { de: 'Vorhaben anlegen', en: 'Create project' }, icon: IconRocket, description: 'Neues Vorhaben mit Ziel, Kontext, Verantwortlichem und Arbeitszustand anlegen' },
+  { path: '/intents/ki-vorschlag-pruefen', label: { de: 'KI-Vorschlag prüfen und freigeben', en: 'Review and approve AI proposal' }, icon: IconRobot, description: 'Vorschlag prüfen, mit geltender Regel abgleichen und freigeben' },
+  { path: '/intents/aufgabe-ausfuehrung-festhalten', label: { de: 'Ausführung festhalten', en: 'Record execution' }, icon: IconPlayerPlay, description: 'Freigegebene Aufgabe als ausgeführt dokumentieren' },
+  { path: '/intents/entscheidung-vorbereiten', label: { de: 'Entscheidung vorbereiten', en: 'Prepare decision' }, icon: IconScale, description: 'Entscheidung mit Frage, Alternativen, Fakten, Regel und Zuständigem anlegen' },
+  { path: '/intents/entscheidung-treffen', label: { de: 'Entscheidung treffen', en: 'Make decision' }, icon: IconGavel, description: 'Option, Begründung und Umsetzungsplan festhalten und entscheiden' },
+  { path: '/intents/ergebnis-festhalten', label: { de: 'Ergebnis und Folgen festhalten', en: 'Record outcome' }, icon: IconChecklist, description: 'Tatsächliches Ergebnis erfassen und Entscheidung als umgesetzt markieren' },
   // </custom:intents>
 ];
 
@@ -52,7 +59,7 @@ export const INTENTS: IntentLink[] = [
  * purpose — a scaffold update resets it to false (self-healing if Phase 2
  * never ran).
  */
-export const INTENTS_PENDING = true;
+export const INTENTS_PENDING = false;
 
 /**
  * When the Phase-1 bundle was deployed (ISO, set by the service together with

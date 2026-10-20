@@ -14,6 +14,13 @@ import { IntentPolicyLoader } from '@/components/IntentPolicyLoader';
 import IntentsAdmin from '@/pages/IntentsAdmin';
 import AppMap from '@/pages/AppMap';
 // <custom:imports>
+const IntentVorhabenAnlegenPage = lazy(() => import('@/pages/intents/VorhabenAnlegenPage'));
+import { DashboardSkeleton } from '@/components/DashboardStates';
+const IntentKiVorschlagPruefenPage = lazy(() => import('@/pages/intents/KiVorschlagPruefenPage'));
+const IntentAufgabeAusfuehrungFesthaltenPage = lazy(() => import('@/pages/intents/AufgabeAusfuehrungFesthaltenPage'));
+const IntentEntscheidungVorbereitenPage = lazy(() => import('@/pages/intents/EntscheidungVorbereitenPage'));
+const IntentEntscheidungTreffenPage = lazy(() => import('@/pages/intents/EntscheidungTreffenPage'));
+const IntentErgebnisFesthaltenPage = lazy(() => import('@/pages/intents/ErgebnisFesthaltenPage'));
 // </custom:imports>
 
 // Lazy: public pages live outside <Layout> and only load on /#/public/:slug —
@@ -85,6 +92,12 @@ export default function App() {
                 <Route path="verwaltung/oeffentliche-seiten" element={<PublicPagesAdmin />} />
                 <Route path="verwaltung/oeffentliche-seiten/:slug/felder" element={<PublicPageFields />} />
                 {/* <custom:routes> */}
+                <Route path="intents/vorhaben-anlegen" element={<Suspense fallback={<DashboardSkeleton />}><IntentVorhabenAnlegenPage /></Suspense>} />
+                <Route path="intents/ki-vorschlag-pruefen" element={<Suspense fallback={<DashboardSkeleton />}><IntentKiVorschlagPruefenPage /></Suspense>} />
+                <Route path="intents/aufgabe-ausfuehrung-festhalten" element={<Suspense fallback={<DashboardSkeleton />}><IntentAufgabeAusfuehrungFesthaltenPage /></Suspense>} />
+                <Route path="intents/entscheidung-vorbereiten" element={<Suspense fallback={<DashboardSkeleton />}><IntentEntscheidungVorbereitenPage /></Suspense>} />
+                <Route path="intents/entscheidung-treffen" element={<Suspense fallback={<DashboardSkeleton />}><IntentEntscheidungTreffenPage /></Suspense>} />
+                <Route path="intents/ergebnis-festhalten" element={<Suspense fallback={<DashboardSkeleton />}><IntentErgebnisFesthaltenPage /></Suspense>} />
                 {/* </custom:routes> */}
                 {/* An unknown hash (a bookmark from before a rebuild renamed the
                     flows, a mistyped link) must not be a blank page. */}

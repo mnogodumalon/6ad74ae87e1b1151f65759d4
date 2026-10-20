@@ -43,6 +43,14 @@ export type MessageFieldKey<E extends EntityKey> = E extends keyof MessageFields
 
 export const REQUIRED_MESSAGES: { [E in EntityKey]?: Partial<Record<MessageFieldKey<E>, string>> } = {
   // <custom:messages>
+  nutzer: { vorname: "Bitte den Vornamen eingeben.", nachname: "Bitte den Nachnamen eingeben.", art: "Bitte wählen, ob Mensch oder KI-Assistent.", rolle: "Bitte eine Rolle wählen.", berechtigungsstufe: "Bitte eine Berechtigungsstufe wählen." },
+  regeln_und_grenzen: { titel: "Bitte einen Titel eingeben.", beschreibung: "Bitte die Regel beschreiben.", regeltyp: "Bitte den Regeltyp wählen.", status: "Bitte den Status wählen." },
+  vorhaben: { titel: "Bitte einen Titel eingeben.", ziel: "Bitte das Ziel beschreiben.", fachlicher_kontext: "Bitte den fachlichen Kontext beschreiben.", arbeitszustand: "Bitte den Arbeitszustand wählen.", verantwortlicher: "Bitte einen Verantwortlichen auswählen." },
+  aufgaben_und_ki_vorschlaege: { vorhaben: "Bitte ein Vorhaben auswählen.", titel: "Bitte einen Titel eingeben.", quelle: "Bitte die Quelle wählen.", zustand: "Bitte den Zustand wählen." },
+  entscheidungen: { vorhaben: "Bitte ein Vorhaben auswählen.", frage: "Bitte die zu entscheidende Frage eingeben.", alternativen: "Bitte die Alternativen beschreiben.", zustaendiger: "Bitte einen Zuständigen auswählen.", entscheidungsstatus: "Bitte den Entscheidungsstatus wählen." },
+  ergebnisse_und_folgen: { entscheidung: "Bitte eine Entscheidung auswählen.", tatsaechliches_ergebnis: "Bitte das tatsächliche Ergebnis beschreiben.", bewertung: "Bitte eine Bewertung wählen." },
+  erfahrungen: { vorhaben: "Bitte ein Vorhaben auswählen.", titel: "Bitte einen Titel eingeben.", art: "Bitte die Art der Erfahrung wählen.", beschreibung: "Bitte die Erfahrung beschreiben.", gueltigkeitsbereich: "Bitte den Gültigkeitsbereich beschreiben.", pruefstatus: "Bitte den Prüfstatus wählen." },
+  lernerkenntnisse: { titel: "Bitte einen Titel eingeben.", erkenntnis: "Bitte die Erkenntnis beschreiben.", erfahrungen: "Bitte mindestens eine Erfahrung auswählen.", gueltigkeitsbereich: "Bitte den Gültigkeitsbereich beschreiben.", status: "Bitte den Status wählen." },
   // </custom:messages>
 };
 
