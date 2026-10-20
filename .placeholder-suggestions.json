@@ -1,0 +1,90 @@
+{
+  "NutzerDialog.tsx": {
+    "vorname": "z. B. Anna",
+    "nachname": "z. B. Müller",
+    "email": "z. B. anna@firma.de",
+    "rolle": "z. B. Bearbeiter, Prüfer",
+    "fachgebiet": "z. B. Controlling"
+  },
+  "RegelnUndGrenzenDialog.tsx": {
+    "titel": "z. B. Freigabe ab 5.000 €",
+    "beschreibung": "Was gilt genau?",
+    "geltungsbereich": "Für wen oder was gilt es?",
+    "verantwortlicher": "Wer ist verantwortlich?",
+    "gueltig_ab": "Wann gilt es ab?",
+    "gueltig_bis": "Wann endet die Gültigkeit?"
+  },
+  "VorhabenDialog.tsx": {
+    "titel": "z. B. Relaunch Kundenportal",
+    "ziel": "Was soll erreicht werden?",
+    "fachlicher_kontext": "Worum geht es fachlich?",
+    "historische_entscheidungen": "Frühere Entscheidungen und Fehler",
+    "technische_besonderheiten": "Was ist technisch wichtig?",
+    "ansprechpartner": "Eine Person pro Zeile",
+    "arbeitszustand": "z. B. Idee, Planung, In Arbeit",
+    "verantwortlicher": "Wer ist verantwortlich?",
+    "startdatum": "Wann startet das Vorhaben?",
+    "zieldatum": "Bis wann soll es fertig sein?",
+    "naechster_schritt": "Was passiert als Nächstes?",
+    "uebergabehinweise": "Was muss man übernehmen?"
+  },
+  "AufgabenUndKiVorschlaegeDialog.tsx": {
+    "vorhaben": "Welches Vorhaben?",
+    "titel": "z. B. Angebot nachfassen",
+    "beschreibung": "Worum geht es bei der Aufgabe?",
+    "vorschlagender": "Wer schlägt vor?",
+    "vorschlag_begruendung": "Vorschlag und warum",
+    "pruefer": "Wer prüft?",
+    "freigabedatum": "Wann wurde freigegeben?",
+    "geltende_regel": "Welche Regel gilt?",
+    "ausgefuehrte_aktion": "Was wurde getan?",
+    "ausfuehrungsdatum": "Wann wurde ausgeführt?"
+  },
+  "EntscheidungenDialog.tsx": {
+    "vorhaben": "Zu welchem Vorhaben?",
+    "frage": "Was ist zu entscheiden?",
+    "alternativen": "Eine Alternative pro Zeile",
+    "gesicherte_fakten": "Ein Fakt pro Zeile",
+    "offene_annahmen": "Eine Annahme pro Zeile",
+    "fehlende_informationen": "Was fehlt noch?",
+    "konsequenzen": "Folgen je Option",
+    "geltende_regel": "Welche Regel gilt?",
+    "zustaendiger": "Wer entscheidet?",
+    "frist": "Bis wann entscheiden?",
+    "gewaehlte_option": "Welche Option gewinnt?",
+    "begruendung": "Warum diese Option?",
+    "umsetzungsplan": "Ein Schritt pro Zeile",
+    "beschlussdatum": "Wann wurde entschieden?"
+  },
+  "ErgebnisseUndFolgenDialog.tsx": {
+    "entscheidung": "Welche Entscheidung?",
+    "aufgabe": "Welche Aufgabe?",
+    "erwartetes_ergebnis": "Was wurde erwartet?",
+    "tatsaechliches_ergebnis": "Was ist eingetreten?",
+    "abweichung": "Was weicht ab?",
+    "messdatum": "Wann wurde gemessen?",
+    "beobachter": "Wer hat beobachtet?"
+  },
+  "ErfahrungenDialog.tsx": {
+    "vorhaben": "Welches Vorhaben?",
+    "entscheidung": "Welche Entscheidung?",
+    "ergebnis": "Welches Ergebnis?",
+    "titel": "z. B. Build-Cache leeren",
+    "art": "z. B. Früherer Fehler, Regel",
+    "beschreibung": "Was wurde erlebt?",
+    "gueltigkeitsbereich": "Wo gilt das?",
+    "voraussetzungen": "Was muss vorher gegeben sein?",
+    "dokumentierender": "Wer dokumentiert?"
+  },
+  "LernerkenntnisseDialog.tsx": {
+    "titel": "z. B. Frühe Abstimmung spart Zeit",
+    "erkenntnis": "Was wurde gelernt?",
+    "erfahrungen": "Welche Erfahrungen?",
+    "gueltigkeitsbereich": "Wo gilt diese Erkenntnis?",
+    "grenzen": "Wo gilt sie nicht?",
+    "empfehlung": "Was wird empfohlen?",
+    "pruefer": "Wer prüft?",
+    "pruefdatum": "Wann wurde geprüft?",
+    "wiederverwendungshinweis": "Wie lässt sie sich wiederverwenden?"
+  }
+}
