@@ -20,6 +20,7 @@
 import type { ComponentType } from 'react';
 
 // <custom:intent-imports>
+import { IconRocket, IconSparkles, IconChecklist, IconPlayerPlay, IconScale, IconGavel } from '@tabler/icons-react';
 // </custom:intent-imports>
 
 export interface IntentLink {
@@ -42,6 +43,12 @@ export interface IntentLink {
 
 export const INTENTS: IntentLink[] = [
   // <custom:intents>
+  { path: '/intents/vorhaben-anlegen', label: { de: 'Vorhaben anlegen', en: 'Create initiative' }, icon: IconRocket, description: 'Vorhaben mit fachlichem Kontext, Verantwortlichem und Arbeitszustand anlegen' },
+  { path: '/intents/ki-vorschlag-erfassen', label: { de: 'KI-Vorschlag erfassen', en: 'Record AI proposal' }, icon: IconSparkles, description: 'Vorschlag der KI oder eines Menschen mit Begründung und Regel festhalten' },
+  { path: '/intents/vorschlag-pruefen', label: { de: 'Vorschlag prüfen und freigeben', en: 'Review and approve proposal' }, icon: IconChecklist, description: 'Offenen Vorschlag prüfen und freigeben oder ablehnen' },
+  { path: '/intents/aktion-ausfuehren', label: { de: 'Freigegebene Aktion abschließen', en: 'Complete approved action' }, icon: IconPlayerPlay, description: 'Freigegebene Aufgabe als ausgeführt markieren und Aktion festhalten' },
+  { path: '/intents/entscheidung-vorbereiten', label: { de: 'Entscheidung vorbereiten', en: 'Prepare decision' }, icon: IconScale, description: 'Entscheidung mit Frage, Alternativen, Fakten, Annahmen und Konsequenzen vorbereiten' },
+  { path: '/intents/entscheidung-beschliessen', label: { de: 'Entscheidung beschließen', en: 'Decide' }, icon: IconGavel, description: 'Vorbereitete Entscheidung beschließen: Option, Begründung, Umsetzungsplan' },
   // </custom:intents>
 ];
 
@@ -52,7 +59,7 @@ export const INTENTS: IntentLink[] = [
  * purpose — a scaffold update resets it to false (self-healing if Phase 2
  * never ran).
  */
-export const INTENTS_PENDING = true;
+export const INTENTS_PENDING = false;
 
 /**
  * When the Phase-1 bundle was deployed (ISO, set by the service together with
