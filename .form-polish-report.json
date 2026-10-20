@@ -1,0 +1,75 @@
+{
+  "entities": {
+    "Nutzer": {
+      "placeholders_set": 5,
+      "defaults_keys": [
+        "aktiv",
+        "art"
+      ],
+      "computed_keys": [],
+      "reason": "Nutzer sind reine Stammdaten ohne numerische Felder, daher gibt es keine Formeln."
+    },
+    "Regeln und Grenzen": {
+      "placeholders_set": 6,
+      "defaults_keys": [
+        "gueltig_ab",
+        "status"
+      ],
+      "computed_keys": [],
+      "reason": "Keine Formeln, da nur Stammdaten mit Datumspaar ohne Dauerfeld und ohne numerische Werte; eine Dauer wird nicht benötigt."
+    },
+    "Vorhaben": {
+      "placeholders_set": 12,
+      "defaults_keys": [
+        "arbeitszustand",
+        "prioritaet",
+        "startdatum"
+      ],
+      "computed_keys": [
+        "_vorhaben_dauer_tage"
+      ],
+      "reason": "Startdatum und Zieldatum bilden ein Datumspaar, daher wird die Dauer in Tagen als virtuelles Feld berechnet."
+    },
+    "Aufgaben und KI-Vorschläge": {
+      "placeholders_set": 10,
+      "defaults_keys": [
+        "quelle"
+      ],
+      "computed_keys": [],
+      "reason": "Keine numerischen Felder oder Datumspaare mit Dauer, daher keine Formeln."
+    },
+    "Entscheidungen": {
+      "placeholders_set": 14,
+      "defaults_keys": [
+        "entscheidungsstatus",
+        "frist"
+      ],
+      "computed_keys": [],
+      "reason": "Keine Formeln, da das Formular nur Text, Verknüpfungen und Daten ohne numerische Felder enthält."
+    },
+    "Ergebnisse und Folgen": {
+      "placeholders_set": 7,
+      "defaults_keys": [
+        "messdatum"
+      ],
+      "computed_keys": [],
+      "reason": "Keine Formeln, da das Formular nur Texte, Verknüpfungen und ein Datum enthält und keine numerische Berechnung möglich ist."
+    },
+    "Erfahrungen": {
+      "placeholders_set": 9,
+      "defaults_keys": [
+        "pruefstatus"
+      ],
+      "computed_keys": [],
+      "reason": "Reine Wissensdatensätze ohne numerische Felder, daher keine Formeln; Prüfstatus startet als Ungeprüft."
+    },
+    "Lernerkenntnisse": {
+      "placeholders_set": 9,
+      "defaults_keys": [
+        "status"
+      ],
+      "computed_keys": [],
+      "reason": "Keine Formeln, da der Dialog nur Textfelder und ein Datum ohne numerische Berechnungskette enthält; Status startet als Entwurf."
+    }
+  }
+}

@@ -1,0 +1,419 @@
+import { lookupLabel } from '@/i18n';
+
+// AUTOMATICALLY GENERATED TYPES - DO NOT EDIT
+
+export type LookupValue = { key: string; label: string };
+/** A raw record URL (applookup reference). NEVER render this directly
+ *  in JSX — it is a URL, not a display value. Show the enriched `*Name`
+ *  field or resolve it via the entity map instead. Assignable to/from
+ *  string everywhere; the `& {}` keeps the alias NAME visible in tsc
+ *  error messages (a plain primitive alias gets normalized away). */
+export type RecordUrl = string & {};
+export type GeoLocation = { lat: number; long: number; info?: string };
+
+export type AttachmentType = 'file' | 'note' | 'url' | 'json';
+export interface Attachment {
+  id: string;
+  type: AttachmentType;
+  label: string | null;
+  value: string | null;
+  active: boolean;
+  createdat?: string | null;
+  updatedat?: string | null;
+}
+
+export interface AttachmentInput {
+  type: AttachmentType;
+  label?: string;
+  value: string;
+  active?: boolean;
+}
+
+export interface Nutzer {
+  record_id: string;
+  /** The API field. */
+  created_at: string;
+  updated_at: string | null;
+  /** Alias of created_at, filled by the read helpers. The API sends
+   *  snake_case only — reading `createdat` off a raw record yields
+   *  undefined, which type-checks and then crashes at runtime. */
+  createdat: string;
+  updatedat: string | null;
+  fields: {
+    vorname?: string;
+    nachname?: string;
+    email?: string;
+    art?: LookupValue;
+    rolle?: LookupValue;
+    berechtigungsstufe?: LookupValue;
+    fachgebiet?: string;
+    aktiv?: boolean;
+  };
+}
+
+export interface RegelnUndGrenzen {
+  record_id: string;
+  /** The API field. */
+  created_at: string;
+  updated_at: string | null;
+  /** Alias of created_at, filled by the read helpers. The API sends
+   *  snake_case only — reading `createdat` off a raw record yields
+   *  undefined, which type-checks and then crashes at runtime. */
+  createdat: string;
+  updatedat: string | null;
+  fields: {
+    titel?: string;
+    beschreibung?: string;
+    regeltyp?: LookupValue;
+    geltungsbereich?: string;
+    erforderliche_rolle?: LookupValue;
+    verantwortlicher?: RecordUrl; // applookup -> URL zu 'Nutzer' Record
+    gueltig_ab?: string; // Format: YYYY-MM-DD oder ISO String
+    gueltig_bis?: string; // Format: YYYY-MM-DD oder ISO String
+    status?: LookupValue;
+  };
+}
+
+export interface Vorhaben {
+  record_id: string;
+  /** The API field. */
+  created_at: string;
+  updated_at: string | null;
+  /** Alias of created_at, filled by the read helpers. The API sends
+   *  snake_case only — reading `createdat` off a raw record yields
+   *  undefined, which type-checks and then crashes at runtime. */
+  createdat: string;
+  updatedat: string | null;
+  fields: {
+    titel?: string;
+    ziel?: string;
+    fachlicher_kontext?: string;
+    historische_entscheidungen?: string;
+    technische_besonderheiten?: string;
+    ansprechpartner?: string;
+    arbeitszustand?: LookupValue;
+    prioritaet?: LookupValue;
+    verantwortlicher?: RecordUrl; // applookup -> URL zu 'Nutzer' Record
+    startdatum?: string; // Format: YYYY-MM-DD oder ISO String
+    zieldatum?: string; // Format: YYYY-MM-DD oder ISO String
+    naechster_schritt?: string;
+    uebergabehinweise?: string;
+  };
+}
+
+export interface AufgabenUndKiVorschlaege {
+  record_id: string;
+  /** The API field. */
+  created_at: string;
+  updated_at: string | null;
+  /** Alias of created_at, filled by the read helpers. The API sends
+   *  snake_case only — reading `createdat` off a raw record yields
+   *  undefined, which type-checks and then crashes at runtime. */
+  createdat: string;
+  updatedat: string | null;
+  fields: {
+    vorhaben?: RecordUrl; // applookup -> URL zu 'Vorhaben' Record
+    titel?: string;
+    beschreibung?: string;
+    quelle?: LookupValue;
+    vorschlagender?: RecordUrl; // applookup -> URL zu 'Nutzer' Record
+    vorschlag_begruendung?: string;
+    zustand?: LookupValue;
+    pruefer?: RecordUrl; // applookup -> URL zu 'Nutzer' Record
+    freigabedatum?: string; // Format: YYYY-MM-DD oder ISO String
+    geltende_regel?: RecordUrl; // applookup -> URL zu 'RegelnUndGrenzen' Record
+    ausgefuehrte_aktion?: string;
+    ausfuehrungsdatum?: string; // Format: YYYY-MM-DD oder ISO String
+  };
+}
+
+export interface Entscheidungen {
+  record_id: string;
+  /** The API field. */
+  created_at: string;
+  updated_at: string | null;
+  /** Alias of created_at, filled by the read helpers. The API sends
+   *  snake_case only — reading `createdat` off a raw record yields
+   *  undefined, which type-checks and then crashes at runtime. */
+  createdat: string;
+  updatedat: string | null;
+  fields: {
+    vorhaben?: RecordUrl; // applookup -> URL zu 'Vorhaben' Record
+    frage?: string;
+    alternativen?: string;
+    gesicherte_fakten?: string;
+    offene_annahmen?: string;
+    fehlende_informationen?: string;
+    konsequenzen?: string;
+    geltende_regel?: RecordUrl; // applookup -> URL zu 'RegelnUndGrenzen' Record
+    zustaendiger?: RecordUrl; // applookup -> URL zu 'Nutzer' Record
+    frist?: string; // Format: YYYY-MM-DD oder ISO String
+    gewaehlte_option?: string;
+    begruendung?: string;
+    umsetzungsplan?: string;
+    beschlussdatum?: string; // Format: YYYY-MM-DD oder ISO String
+    entscheidungsstatus?: LookupValue;
+  };
+}
+
+export interface ErgebnisseUndFolgen {
+  record_id: string;
+  /** The API field. */
+  created_at: string;
+  updated_at: string | null;
+  /** Alias of created_at, filled by the read helpers. The API sends
+   *  snake_case only — reading `createdat` off a raw record yields
+   *  undefined, which type-checks and then crashes at runtime. */
+  createdat: string;
+  updatedat: string | null;
+  fields: {
+    entscheidung?: RecordUrl; // applookup -> URL zu 'Entscheidungen' Record
+    aufgabe?: RecordUrl; // applookup -> URL zu 'AufgabenUndKiVorschlaege' Record
+    erwartetes_ergebnis?: string;
+    tatsaechliches_ergebnis?: string;
+    abweichung?: string;
+    bewertung?: LookupValue;
+    messdatum?: string; // Format: YYYY-MM-DD oder ISO String
+    beobachter?: RecordUrl; // applookup -> URL zu 'Nutzer' Record
+  };
+}
+
+export interface Erfahrungen {
+  record_id: string;
+  /** The API field. */
+  created_at: string;
+  updated_at: string | null;
+  /** Alias of created_at, filled by the read helpers. The API sends
+   *  snake_case only — reading `createdat` off a raw record yields
+   *  undefined, which type-checks and then crashes at runtime. */
+  createdat: string;
+  updatedat: string | null;
+  fields: {
+    vorhaben?: RecordUrl; // applookup -> URL zu 'Vorhaben' Record
+    entscheidung?: RecordUrl; // applookup -> URL zu 'Entscheidungen' Record
+    ergebnis?: RecordUrl; // applookup -> URL zu 'ErgebnisseUndFolgen' Record
+    titel?: string;
+    art?: LookupValue;
+    beschreibung?: string;
+    gueltigkeitsbereich?: string;
+    voraussetzungen?: string;
+    dokumentierender?: RecordUrl; // applookup -> URL zu 'Nutzer' Record
+    pruefstatus?: LookupValue;
+  };
+}
+
+export interface Lernerkenntnisse {
+  record_id: string;
+  /** The API field. */
+  created_at: string;
+  updated_at: string | null;
+  /** Alias of created_at, filled by the read helpers. The API sends
+   *  snake_case only — reading `createdat` off a raw record yields
+   *  undefined, which type-checks and then crashes at runtime. */
+  createdat: string;
+  updatedat: string | null;
+  fields: {
+    titel?: string;
+    erkenntnis?: string;
+    erfahrungen?: RecordUrl[];
+    gueltigkeitsbereich?: string;
+    grenzen?: string;
+    empfehlung?: string;
+    pruefer?: RecordUrl; // applookup -> URL zu 'Nutzer' Record
+    pruefdatum?: string; // Format: YYYY-MM-DD oder ISO String
+    status?: LookupValue;
+    wiederverwendungshinweis?: string;
+  };
+}
+
+export const APP_IDS = {
+  NUTZER: '6ad74ab3e3e862f5a887d004',
+  REGELN_UND_GRENZEN: '6ad74abac619f993646b2266',
+  VORHABEN: '6ad74abc3ca3ed3613934f11',
+  AUFGABEN_UND_KI_VORSCHLAEGE: '6ad74abd21583e28b42e08b4',
+  ENTSCHEIDUNGEN: '6ad74abd2000289a051cb527',
+  ERGEBNISSE_UND_FOLGEN: '6ad74abfab59dce91c85a89f',
+  ERFAHRUNGEN: '6ad74ac0daf4d5c322fca76d',
+  LERNERKENNTNISSE: '6ad74ac109e4aab7d2b4d8ed',
+} as const;
+
+
+export const LOOKUP_OPTIONS: Record<string, Record<string, {key: string, label: string}[]>> = {
+  'nutzer': {
+    art: [{ key: "mensch", get label() { return lookupLabel('nutzer', 'art', "mensch") ?? "Mensch"; } }, { key: "ki_assistent", get label() { return lookupLabel('nutzer', 'art', "ki_assistent") ?? "KI-Assistent"; } }],
+    rolle: [{ key: "administrator", get label() { return lookupLabel('nutzer', 'rolle', "administrator") ?? "Administrator"; } }, { key: "projektverantwortlicher", get label() { return lookupLabel('nutzer', 'rolle', "projektverantwortlicher") ?? "Projektverantwortlicher"; } }, { key: "entscheider", get label() { return lookupLabel('nutzer', 'rolle', "entscheider") ?? "Entscheider"; } }, { key: "pruefer", get label() { return lookupLabel('nutzer', 'rolle', "pruefer") ?? "Prüfer"; } }, { key: "bearbeiter", get label() { return lookupLabel('nutzer', 'rolle', "bearbeiter") ?? "Bearbeiter"; } }, { key: "beobachter", get label() { return lookupLabel('nutzer', 'rolle', "beobachter") ?? "Beobachter"; } }],
+    berechtigungsstufe: [{ key: "freigeben", get label() { return lookupLabel('nutzer', 'berechtigungsstufe', "freigeben") ?? "Freigeben"; } }, { key: "verwalten", get label() { return lookupLabel('nutzer', 'berechtigungsstufe', "verwalten") ?? "Verwalten"; } }, { key: "lesen", get label() { return lookupLabel('nutzer', 'berechtigungsstufe', "lesen") ?? "Lesen"; } }, { key: "vorschlagen", get label() { return lookupLabel('nutzer', 'berechtigungsstufe', "vorschlagen") ?? "Vorschlagen"; } }, { key: "bearbeiten", get label() { return lookupLabel('nutzer', 'berechtigungsstufe', "bearbeiten") ?? "Bearbeiten"; } }],
+  },
+  'regeln_und_grenzen': {
+    regeltyp: [{ key: "regel", get label() { return lookupLabel('regeln_und_grenzen', 'regeltyp', "regel") ?? "Regel"; } }, { key: "grenze", get label() { return lookupLabel('regeln_und_grenzen', 'regeltyp', "grenze") ?? "Grenze"; } }, { key: "berechtigung", get label() { return lookupLabel('regeln_und_grenzen', 'regeltyp', "berechtigung") ?? "Berechtigung"; } }, { key: "informelle_regel", get label() { return lookupLabel('regeln_und_grenzen', 'regeltyp', "informelle_regel") ?? "Informelle Regel"; } }],
+    erforderliche_rolle: [{ key: "administrator", get label() { return lookupLabel('regeln_und_grenzen', 'erforderliche_rolle', "administrator") ?? "Administrator"; } }, { key: "projektverantwortlicher", get label() { return lookupLabel('regeln_und_grenzen', 'erforderliche_rolle', "projektverantwortlicher") ?? "Projektverantwortlicher"; } }, { key: "entscheider", get label() { return lookupLabel('regeln_und_grenzen', 'erforderliche_rolle', "entscheider") ?? "Entscheider"; } }, { key: "pruefer", get label() { return lookupLabel('regeln_und_grenzen', 'erforderliche_rolle', "pruefer") ?? "Prüfer"; } }, { key: "bearbeiter", get label() { return lookupLabel('regeln_und_grenzen', 'erforderliche_rolle', "bearbeiter") ?? "Bearbeiter"; } }],
+    status: [{ key: "entwurf", get label() { return lookupLabel('regeln_und_grenzen', 'status', "entwurf") ?? "Entwurf"; } }, { key: "gueltig", get label() { return lookupLabel('regeln_und_grenzen', 'status', "gueltig") ?? "Gültig"; } }, { key: "ausser_kraft", get label() { return lookupLabel('regeln_und_grenzen', 'status', "ausser_kraft") ?? "Außer Kraft"; } }],
+  },
+  'vorhaben': {
+    arbeitszustand: [{ key: "idee", get label() { return lookupLabel('vorhaben', 'arbeitszustand', "idee") ?? "Idee"; } }, { key: "planung", get label() { return lookupLabel('vorhaben', 'arbeitszustand', "planung") ?? "Planung"; } }, { key: "in_arbeit", get label() { return lookupLabel('vorhaben', 'arbeitszustand', "in_arbeit") ?? "In Arbeit"; } }, { key: "in_pruefung", get label() { return lookupLabel('vorhaben', 'arbeitszustand', "in_pruefung") ?? "In Prüfung"; } }, { key: "umgesetzt", get label() { return lookupLabel('vorhaben', 'arbeitszustand', "umgesetzt") ?? "Umgesetzt"; } }, { key: "abgeschlossen", get label() { return lookupLabel('vorhaben', 'arbeitszustand', "abgeschlossen") ?? "Abgeschlossen"; } }, { key: "pausiert", get label() { return lookupLabel('vorhaben', 'arbeitszustand', "pausiert") ?? "Pausiert"; } }],
+    prioritaet: [{ key: "niedrig", get label() { return lookupLabel('vorhaben', 'prioritaet', "niedrig") ?? "Niedrig"; } }, { key: "mittel", get label() { return lookupLabel('vorhaben', 'prioritaet', "mittel") ?? "Mittel"; } }, { key: "hoch", get label() { return lookupLabel('vorhaben', 'prioritaet', "hoch") ?? "Hoch"; } }, { key: "kritisch", get label() { return lookupLabel('vorhaben', 'prioritaet', "kritisch") ?? "Kritisch"; } }],
+  },
+  'aufgaben_und_ki_vorschlaege': {
+    quelle: [{ key: "mensch", get label() { return lookupLabel('aufgaben_und_ki_vorschlaege', 'quelle', "mensch") ?? "Mensch"; } }, { key: "ki_vorschlag", get label() { return lookupLabel('aufgaben_und_ki_vorschlaege', 'quelle', "ki_vorschlag") ?? "KI-Vorschlag"; } }],
+    zustand: [{ key: "vorgeschlagen", get label() { return lookupLabel('aufgaben_und_ki_vorschlaege', 'zustand', "vorgeschlagen") ?? "Vorgeschlagen"; } }, { key: "geprueft", get label() { return lookupLabel('aufgaben_und_ki_vorschlaege', 'zustand', "geprueft") ?? "Geprüft"; } }, { key: "freigegeben", get label() { return lookupLabel('aufgaben_und_ki_vorschlaege', 'zustand', "freigegeben") ?? "Freigegeben"; } }, { key: "abgelehnt", get label() { return lookupLabel('aufgaben_und_ki_vorschlaege', 'zustand', "abgelehnt") ?? "Abgelehnt"; } }, { key: "ausgefuehrt", get label() { return lookupLabel('aufgaben_und_ki_vorschlaege', 'zustand', "ausgefuehrt") ?? "Ausgeführt"; } }],
+  },
+  'entscheidungen': {
+    entscheidungsstatus: [{ key: "in_vorbereitung", get label() { return lookupLabel('entscheidungen', 'entscheidungsstatus', "in_vorbereitung") ?? "In Vorbereitung"; } }, { key: "entscheidungsreif", get label() { return lookupLabel('entscheidungen', 'entscheidungsstatus', "entscheidungsreif") ?? "Entscheidungsreif"; } }, { key: "entschieden", get label() { return lookupLabel('entscheidungen', 'entscheidungsstatus', "entschieden") ?? "Entschieden"; } }, { key: "umgesetzt", get label() { return lookupLabel('entscheidungen', 'entscheidungsstatus', "umgesetzt") ?? "Umgesetzt"; } }, { key: "verworfen", get label() { return lookupLabel('entscheidungen', 'entscheidungsstatus', "verworfen") ?? "Verworfen"; } }],
+  },
+  'ergebnisse_und_folgen': {
+    bewertung: [{ key: "wie_erwartet", get label() { return lookupLabel('ergebnisse_und_folgen', 'bewertung', "wie_erwartet") ?? "Wie erwartet"; } }, { key: "besser", get label() { return lookupLabel('ergebnisse_und_folgen', 'bewertung', "besser") ?? "Besser als erwartet"; } }, { key: "schlechter", get label() { return lookupLabel('ergebnisse_und_folgen', 'bewertung', "schlechter") ?? "Schlechter als erwartet"; } }],
+  },
+  'erfahrungen': {
+    art: [{ key: "loesungsweg", get label() { return lookupLabel('erfahrungen', 'art', "loesungsweg") ?? "Funktionierender Lösungsweg"; } }, { key: "frueherer_fehler", get label() { return lookupLabel('erfahrungen', 'art', "frueherer_fehler") ?? "Früherer Fehler"; } }, { key: "technische_besonderheit", get label() { return lookupLabel('erfahrungen', 'art', "technische_besonderheit") ?? "Technische Besonderheit"; } }, { key: "informelle_regel", get label() { return lookupLabel('erfahrungen', 'art', "informelle_regel") ?? "Informelle Regel"; } }, { key: "ansprechpartner", get label() { return lookupLabel('erfahrungen', 'art', "ansprechpartner") ?? "Ansprechpartner"; } }, { key: "historische_entscheidung", get label() { return lookupLabel('erfahrungen', 'art', "historische_entscheidung") ?? "Historische Entscheidung"; } }],
+    pruefstatus: [{ key: "ungeprueft", get label() { return lookupLabel('erfahrungen', 'pruefstatus', "ungeprueft") ?? "Ungeprüft"; } }, { key: "in_pruefung", get label() { return lookupLabel('erfahrungen', 'pruefstatus', "in_pruefung") ?? "In Prüfung"; } }, { key: "geprueft", get label() { return lookupLabel('erfahrungen', 'pruefstatus', "geprueft") ?? "Geprüft"; } }, { key: "abgelehnt", get label() { return lookupLabel('erfahrungen', 'pruefstatus', "abgelehnt") ?? "Abgelehnt"; } }],
+  },
+  'lernerkenntnisse': {
+    status: [{ key: "entwurf", get label() { return lookupLabel('lernerkenntnisse', 'status', "entwurf") ?? "Entwurf"; } }, { key: "geprueft", get label() { return lookupLabel('lernerkenntnisse', 'status', "geprueft") ?? "Geprüft"; } }, { key: "gueltig", get label() { return lookupLabel('lernerkenntnisse', 'status', "gueltig") ?? "Gültig"; } }, { key: "veraltet", get label() { return lookupLabel('lernerkenntnisse', 'status', "veraltet") ?? "Veraltet"; } }],
+  },
+};
+
+// Optimistic LookupValue writes: never re-type a label — resolve the schema
+// option instead (its label is a locale-aware getter; falls back to the key).
+// WRONG: status: { key: 'offen', label: 'Offen' }   (frozen in one language)
+// RIGHT: status: lookupOption('<appKey>', 'status', 'offen')
+export function lookupOption(app: string, field: string, key: string): LookupValue {
+  return LOOKUP_OPTIONS[app]?.[field]?.find(o => o.key === key) ?? { key, label: key };
+}
+
+export const FIELD_TYPES: Record<string, Record<string, string>> = {
+  'nutzer': {
+    'vorname': 'string/text',
+    'nachname': 'string/text',
+    'email': 'string/email',
+    'art': 'lookup/radio',
+    'rolle': 'lookup/select',
+    'berechtigungsstufe': 'lookup/select',
+    'fachgebiet': 'string/text',
+    'aktiv': 'bool',
+  },
+  'regeln_und_grenzen': {
+    'titel': 'string/text',
+    'beschreibung': 'string/textarea',
+    'regeltyp': 'lookup/select',
+    'geltungsbereich': 'string/textarea',
+    'erforderliche_rolle': 'lookup/select',
+    'verantwortlicher': 'applookup/select',
+    'gueltig_ab': 'date/date',
+    'gueltig_bis': 'date/date',
+    'status': 'lookup/radio',
+  },
+  'vorhaben': {
+    'titel': 'string/text',
+    'ziel': 'string/textarea',
+    'fachlicher_kontext': 'string/textarea',
+    'historische_entscheidungen': 'string/textarea',
+    'technische_besonderheiten': 'string/textarea',
+    'ansprechpartner': 'string/textarea',
+    'arbeitszustand': 'lookup/select',
+    'prioritaet': 'lookup/radio',
+    'verantwortlicher': 'applookup/select',
+    'startdatum': 'date/date',
+    'zieldatum': 'date/date',
+    'naechster_schritt': 'string/textarea',
+    'uebergabehinweise': 'string/textarea',
+  },
+  'aufgaben_und_ki_vorschlaege': {
+    'vorhaben': 'applookup/select',
+    'titel': 'string/text',
+    'beschreibung': 'string/textarea',
+    'quelle': 'lookup/radio',
+    'vorschlagender': 'applookup/select',
+    'vorschlag_begruendung': 'string/textarea',
+    'zustand': 'lookup/select',
+    'pruefer': 'applookup/select',
+    'freigabedatum': 'date/datetimeminute',
+    'geltende_regel': 'applookup/select',
+    'ausgefuehrte_aktion': 'string/textarea',
+    'ausfuehrungsdatum': 'date/datetimeminute',
+  },
+  'entscheidungen': {
+    'vorhaben': 'applookup/select',
+    'frage': 'string/textarea',
+    'alternativen': 'string/textarea',
+    'gesicherte_fakten': 'string/textarea',
+    'offene_annahmen': 'string/textarea',
+    'fehlende_informationen': 'string/textarea',
+    'konsequenzen': 'string/textarea',
+    'geltende_regel': 'applookup/select',
+    'zustaendiger': 'applookup/select',
+    'frist': 'date/date',
+    'gewaehlte_option': 'string/textarea',
+    'begruendung': 'string/textarea',
+    'umsetzungsplan': 'string/textarea',
+    'beschlussdatum': 'date/date',
+    'entscheidungsstatus': 'lookup/select',
+  },
+  'ergebnisse_und_folgen': {
+    'entscheidung': 'applookup/select',
+    'aufgabe': 'applookup/select',
+    'erwartetes_ergebnis': 'string/textarea',
+    'tatsaechliches_ergebnis': 'string/textarea',
+    'abweichung': 'string/textarea',
+    'bewertung': 'lookup/radio',
+    'messdatum': 'date/date',
+    'beobachter': 'applookup/select',
+  },
+  'erfahrungen': {
+    'vorhaben': 'applookup/select',
+    'entscheidung': 'applookup/select',
+    'ergebnis': 'applookup/select',
+    'titel': 'string/text',
+    'art': 'lookup/select',
+    'beschreibung': 'string/textarea',
+    'gueltigkeitsbereich': 'string/textarea',
+    'voraussetzungen': 'string/textarea',
+    'dokumentierender': 'applookup/select',
+    'pruefstatus': 'lookup/radio',
+  },
+  'lernerkenntnisse': {
+    'titel': 'string/text',
+    'erkenntnis': 'string/textarea',
+    'erfahrungen': 'multipleapplookup/select',
+    'gueltigkeitsbereich': 'string/textarea',
+    'grenzen': 'string/textarea',
+    'empfehlung': 'string/textarea',
+    'pruefer': 'applookup/select',
+    'pruefdatum': 'date/date',
+    'status': 'lookup/select',
+    'wiederverwendungshinweis': 'string/textarea',
+  },
+};
+
+export const HUB_TOPOLOGY: Record<string, { field: string; entity: string }[]> = {
+  'nutzer': [
+    { field: 'verantwortlicher', entity: 'regeln_und_grenzen' },
+    { field: 'verantwortlicher', entity: 'vorhaben' },
+    { field: 'vorschlagender', entity: 'aufgaben_und_ki_vorschlaege' },
+    { field: 'pruefer', entity: 'aufgaben_und_ki_vorschlaege' },
+    { field: 'zustaendiger', entity: 'entscheidungen' },
+    { field: 'beobachter', entity: 'ergebnisse_und_folgen' },
+    { field: 'dokumentierender', entity: 'erfahrungen' },
+    { field: 'pruefer', entity: 'lernerkenntnisse' },
+  ],
+  'vorhaben': [
+    { field: 'vorhaben', entity: 'aufgaben_und_ki_vorschlaege' },
+    { field: 'vorhaben', entity: 'entscheidungen' },
+    { field: 'vorhaben', entity: 'erfahrungen' },
+  ],
+};
+
+type StripLookup<T> = {
+  [K in keyof T]: T[K] extends LookupValue | undefined ? string | LookupValue | undefined
+    : T[K] extends LookupValue[] | undefined ? string[] | LookupValue[] | undefined
+    : T[K];
+};
+
+// Helper Types for creating new records (lookup fields as plain strings for API)
+export type CreateNutzer = StripLookup<Nutzer['fields']>;
+export type CreateRegelnUndGrenzen = StripLookup<RegelnUndGrenzen['fields']>;
+export type CreateVorhaben = StripLookup<Vorhaben['fields']>;
+export type CreateAufgabenUndKiVorschlaege = StripLookup<AufgabenUndKiVorschlaege['fields']>;
+export type CreateEntscheidungen = StripLookup<Entscheidungen['fields']>;
+export type CreateErgebnisseUndFolgen = StripLookup<ErgebnisseUndFolgen['fields']>;
+export type CreateErfahrungen = StripLookup<Erfahrungen['fields']>;
+export type CreateLernerkenntnisse = StripLookup<Lernerkenntnisse['fields']>;

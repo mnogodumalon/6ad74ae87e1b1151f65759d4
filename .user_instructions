@@ -1,0 +1,44 @@
+Erstelle eine Anwendung, die eine Arbeitsinfrastruktur schafft, in der Menschen und KI komplexe Vorhaben gemeinsam bearbeiten, Ergebnisse kontrolliert in die Wirklichkeit überführen und aus den tatsächlichen Folgen ihrer Arbeit lernen können.
+
+Darin liegen vier eigenständige Leistungen verborgen, die die Anwendung liefern muss:
+1. Kontinuität
+Das Vorhaben bleibt über Zeit, Personen und Werkzeuge hinweg verständlich.
+2. Wirksamkeit
+Informationen und KI-Fähigkeiten werden in konkrete Tätigkeiten und Ergebnisse übersetzt.
+3. Kontrolle
+Regeln, Berechtigungen, Entscheidungen und Zustandsänderungen bleiben nachvollziehbar.
+4. Lernen
+Erfahrungen werden geprüft, in ihren Gültigkeitsbereich eingeordnet und für spätere Vorhaben nutzbar gemacht.
+
+Diese vier Leistungen sind auch dann relevant, wenn KI wesentlich leistungsfähiger wird.
+Sie sind nicht davon abhängig, dass Menschen für immer jede intellektuelle Aufgabe besser erledigen als Maschinen.
+Sie beruhen auf den Anforderungen organisierter, verantwortlicher Arbeit.
+Bei der Umsetzung der Anwendung müssen Module für Nutzer, Vorhaben, Erfahrungen und Lernen aus Erfahrungen vorgesehen werden.
+Entscheidend sind:
+1. Ein dauerhafter fachlicher Kontext.
+2. Ein expliziter und nachvollziehbarer Arbeitszustand.
+3. Eine kontrollierte Verbindung zwischen KI-Vorschlägen und tatsächlichen Aktionen.
+4. Explizite Regeln und Berechtigungen.
+5. Die Verbindung von Entscheidungen mit ihren Ergebnissen.
+6. Die Wiederverwendung geprüfter Erfahrungen.
+
+Individuelle Wissensmonopole müssen verhindert werden: In vielen Unternehmen hängt die Bearbeitung eines Problems von einzelnen erfahrenen Mitarbeitern ab.
+Sie kennen:
+* historische Entscheidungen,
+* technische Besonderheiten,
+* frühere Fehler,
+* informelle Regeln,
+* Ansprechpartner,
+* funktionierende Lösungswege.
+Dieses Wissen muss vollständig als später wieder nutzbare Erfahrungen dokumentiert werden.
+Die Anwendung muss bei wichtigen Entscheidungen sichtbar machen:
+* Welche Frage steht zur Entscheidung?
+* Welche Alternativen bestehen?
+* Welche Fakten sind gesichert?
+* Welche Annahmen sind offen?
+* Welche Informationen fehlen?
+* Welche Konsequenzen haben die Optionen?
+* Welche Regeln und Grenzen gelten?
+* Wer ist für die Entscheidung zuständig?
+* Was wird nach der Entscheidung umgesetzt?
+Dabei muss die Darstellung an die jeweiligen Situation optimal angepasst werden.

@@ -1,0 +1,38 @@
+{
+  "pages": {
+    "en": {
+      "Aktive Vorhaben ohne nächsten Schritt": "Active initiatives without next step",
+      "Alle Erfahrungen sind geprüft.": "All experiences have been reviewed.",
+      "Entscheidungen & Fristen": "Decisions & Deadlines",
+      "Entschieden ohne Ergebnis": "Decided without outcome",
+      "Erfahrung dokumentieren": "Document experience",
+      "Ergebnis erfassen": "Record outcome",
+      "Erstes Vorhaben anlegen": "Create first initiative",
+      "Freigeben": "Approve",
+      "Frist verpasst bei: {0}.": "Deadline missed for: {0}.",
+      "Geprüft": "Reviewed",
+      "KI-Vorschläge zur Prüfung": "AI suggestions for review",
+      "Kein nächster Schritt": "No next step",
+      "Kein nächster Schritt bei: {0}.": "No next step for: {0}.",
+      "Keine Entwürfe offen.": "No open drafts.",
+      "Keine offenen Entscheidungen.": "No open decisions.",
+      "Lege dein erstes Vorhaben an, damit Kontext und Arbeitszustand erhalten bleiben.": "Create your first initiative so context and working state are preserved.",
+      "Lernerkenntnisse im Entwurf": "Draft lessons learned",
+      "Läuft: {0} — nichts Dringendes offen.": "In progress: {0} — nothing urgent pending.",
+      "Neues Vorhaben": "New initiative",
+      "Nichts zu prüfen — alle Vorschläge sind bearbeitet.": "Nothing to review — all suggestions have been processed.",
+      "Noch ohne Ergebnis: {0}.": "No outcome yet: {0}.",
+      "Ohne Ergebnis": "No outcome",
+      "Ohne Prüfer": "No reviewer",
+      "Prüfen": "Review",
+      "Ungeprüft": "Unreviewed",
+      "Ungeprüfte Erfahrungen": "Unreviewed experiences",
+      "Weiter": "Continue",
+      "Weiter bearbeiten": "Continue working",
+      "Weiter: {0}": "Next: {0}",
+      "Zur Prüfung warten: {0}.": "Awaiting review: {0}.",
+      "— Frist war {0}, noch keine Entscheidung.": "— deadline was {0}, no decision yet."
+    }
+  },
+  "v": 1
+}
